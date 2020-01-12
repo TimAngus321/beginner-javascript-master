@@ -7,6 +7,7 @@ const people = [
 /* Victor Mono */
 // New Font!
 people.forEach((person, index) => {
+  debugger;
   console.log(person.name);
 });
 

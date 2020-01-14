@@ -3,11 +3,9 @@ const people = [
   { name: 'Scott', cool: true, country: 'Merica' },
   { name: 'Snickers', cool: false, country: 'Dog Country' },
 ];
-
 /* Victor Mono */
 // New Font!
 people.forEach((person, index) => {
-  debugger;
   console.log(person.name);
 });
 

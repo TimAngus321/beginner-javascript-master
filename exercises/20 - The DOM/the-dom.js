@@ -14,4 +14,16 @@ pizzaList.insertAdjacentText('afterbegin', '🍕');
 pizzaList.insertAdjacentText('beforeend', '🍕');
 
 // Classes
+const picture = document.querySelector('.nice');
+// Below common methods you can add to classes
+picture.classList.add('open');
+picture.classList.remove('cool');
+picture.classList.toggle('round');
+console.log(picture.classList);
 
+// function with eventListener
+function toggleRound() {
+    picture.classList.toggle('round');
+}
+
+picture.addEventListener('click', toggleRound);

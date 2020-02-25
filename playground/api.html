@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIs</title>
+</head>
+<body>
+
+    <form method="post"> 
+        
+            
+        <p>
+          <label for="vat_id">VAT ID</label>
+          <input id="vat_id" type="text"  > 
+          <input type="submit" name="Save VAT ID" value="Save VAT">
+        </p>
+      <input type="submit" name="Validate VAT" value="Validate">
+    </form>
+    <script>
+        // countryCode = " ATU";
+        // vatNum = "00000024";
+        vatNumber = "BE0411905847"
+        // vatNumber = document.getElementById('vat_id').innerText
+
+        function handleError(err) {
+            console.log('Error');
+            console.log(err);
+        }
+
+        
+
+        // const endpoint = `http://ec.europa.eu/taxation_customs/vies${countryCode}${vatNum}`;
+
+        // const endpoint = `http://www.apilayer.net/api/validate?access_key=6c13447df22c9ccb3d2e5a5d569baf47&vat_number=${countryCode}${vatNum}`
+        const endpoint = `http://www.apilayer.net/api/validate?access_key=6c13447df22c9ccb3d2e5a5d569baf47&vat_number=${vatNumber}`
+        const validateVat = fetch(endpoint)
+        validateVat.then(response => {
+            return response.json();
+            }).then(data => {
+                console.log(data);
+                console.log(data.valid);
+                console.log(data.format_valid)
+            }).catch(handleError)
+
+      
+        
+        
+
+</script>
+    
+</body>
+</html>
+

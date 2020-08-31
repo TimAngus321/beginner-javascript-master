@@ -14,6 +14,7 @@
   <script>
     const toppings = ['Mushrooms ', 'Tomatoes', 'Eggs', 'Chili', 'Lettuce', 'Avocado', 'Chiles', 'Bacon', 'Pickles', 'Onions', 'Cheese'];
 
+
     const students = [
       {
         id: '11ce',
@@ -128,6 +129,62 @@
     /*
       Looping Methods
     */
+
+    // toppings.forEach(topping => {
+//   console.log(topping);
+// });
+
+function logTopping(topping, index, originalArray) {
+
+const nextTopping = originalArray[index + 1];
+const prevTopping = originalArray[index -1]; 
+console.log(topping);
+
+prevTopping ? console.log(prevTopping) : null;
+nextTopping ? console.log(nextTopping) : null;
+
+index === originalArray.length -1 ? console.log('Goodbye') :
+console.log('Getting the next topping');
+console.log('-----🤪------')
+}
+
+toppings.forEach(logTopping); 
+
+console.clear();
+
+function addArms(face) {
+  return `✋🏿 ${face} ✋🏿`;
+}
+
+function capitalize(word) {
+  return `${word[0].toUpperCase()}${word.slice(1)}`;
+}
+
+function angusit(name) {
+  return `${name} angus`;
+}
+
+const toys = faces.map(addArms);
+
+const fullName = ['tim', 'harry', 'charles']
+  .map(angusit)
+  .map(capitalize);
+console.log(fullName);
+
+console.log(toys);
+
+const orderTotalsWithTax = orderTotals.map(total => total * 1.13);
+console.log(orderTotalsWithTax);
+
+const cleanPeople = people.map(function(person) {
+  const birthday = new Date(person.birthday).getTime();
+  const now = Date.now();
+  const age = now - birthday;
+  console.log(age);
+})
+
+console.log('The time is', Date());
+
 
   </script>
 </body>
